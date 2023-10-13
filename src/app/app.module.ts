@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CareerspageComponent } from './careerspage/careerspage.component';
 // import {Ro}
 
 
@@ -12,7 +13,8 @@ import { SignupComponent } from './signup/signup.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CareerspageComponent
   ],
   imports: [
     BrowserModule,
