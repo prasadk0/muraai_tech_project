@@ -1,0 +1,24 @@
+
+<table class="mx-10 my-10" matSort (matSortChange)="sortData($event)">
+    <tr color="primary" class="bg-gray-300 p-8">
+      <th class="p-5" mat-sort-header="id">Id</th>
+      <th class="p-5" mat-sort-header="title">Title |</th>
+      <th class="p-5" mat-sort-header="price">Price</th>
+      <th class="p-5" mat-sort-header="description" >Description</th>
+      <!-- <th mat-sort-header="protein">Protein (g)</th> -->
+    </tr>
+  
+    <tr *ngFor="let dessert of sortedData ">
+      <td class="p-5"> {{dessert.id}}</td>
+      <td class="p-5">{{dessert.title}}</td>
+      <td class="p-5">{{dessert.price}}</td>
+      <td class="p-5">{{dessert.description}}</td>
+      <!-- <td>{{dessert.protein}}</td> -->
+    </tr>
+   
+</table>
+<!-- <mat-paginator #paginator [length]="100"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]"
+aria-label="Select page"> -->
+<!-- </mat-paginator> -->

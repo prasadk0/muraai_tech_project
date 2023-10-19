@@ -1,1 +1,85 @@
-<p>careerspage works!</p>
+<h1>{{ username|async }}</h1>
+<input
+  type="text"
+  class="w-50 h-10 mx-10 rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6 focus:ring-violet-300 focus:border-gray-500 outline-blue-500 focus:cursor-auto outline-blue-500"
+  #dummy
+/>
+<button class="bg-black" (click)="update(dummy)">click</button>
+<div class="container flex mt-10 flew-row justify-evenly">
+  <img src="../../assets/images.jpeg" width="50%" alt="" />
+  <div class="text w-96 mt-10">
+    At Muraai, we value the strengths of our employees. We empower our employees
+    by giving them enriching opportunities for growth and learning supported by
+    a friendly environment. We celebrate diversity and practice inclusivity,
+    ensuring everyone is treated with mutual respect and trust.
+    <br />
+
+    We are perfectionists. Idealists. Focused on our work and always on the
+    lookout for better opportunities. Any role at Muraai is one that requires a
+    lot from you, but rest assured that you’ll be rewarded for bright ideas,
+    original thinking and hard work. None of us here at Muraai would have it any
+    other way.
+  </div>
+</div>
+<div class="cards py-5 flex mt-10 card flew-row justify-center">
+  <div>
+    <img
+      class="rounded-full rounded-s-full"
+      src="../../assets/images.jpeg"
+      alt=""
+    />
+  </div>
+  <div><img class="rounded-full" src="../../assets/images.jpeg" alt="" /></div>
+  <div><img class="rounded-full" src="../../assets/images.jpeg" alt="" /></div>
+</div>
+
+<div class="tagline my-5 py-3 bg-pink-300">
+  <p class="text-center text-orange-200">
+    Bringing Liveliness to Work, Manifest the Best in You
+  </p>
+
+  <p class="text-center text-black">
+    We commit ourselves to nurture an environment that is inclusive and ensure
+    that everyone is treated with dignity and respect.
+  </p>
+</div>
+
+<div class="ml-80">
+  <div class="search">
+    <input
+      type="text"
+      placeholder="Search job..."
+      [(ngModel)]="key"
+      class="w-50 h-10 mx-10 rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-slate-400 sm:text-sm sm:leading-6 focus:ring-violet-300 focus:border-gray-500 outline-blue-500 focus:cursor-auto outline-blue-500 focus:outline-none"
+    />
+
+    <!-- <button (click)="filter()">click</button> -->
+  </div>
+
+  <div class="mx-auto min-h-screen flex flex-row flex-wrap">
+    <div
+      *ngFor="let item of jsonData | filterpipe : key"
+      class="minwidth max-h-50 mx-10 my-10 cards"
+    >
+      <div
+        class="rounded-lg bg-gray-200 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+      >
+        <h5
+          class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
+        >
+          {{ item.title }}
+        </h5>
+        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+          {{ item.company }}
+        </p>
+        <button
+          type="button"
+          class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover: bg-purple-400 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+          data-te-ripple-init
+          data-te-ripple-color="light">
+          More info
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

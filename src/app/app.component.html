@@ -9,11 +9,9 @@
   <div class="links">
     <ul class="flex flex-row mt-4 ml-4">
       <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a routerLink="signup">Home</a></li>
-      <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600 hover:text-green-700 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2">About</li>
-      <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600  hover:text-green-700 bg-green-300  hover:bg-white  hover:text-black p-3 hover:border-2" >Products</li>
-      <li class="mr-5 border-2 hover:decoration-dashed  hover:border-green-600 hover:bg-white  hover:text-black bg-green-300  p-3 hover:border-green-600 hover:border-2">Careers</li>
-
-     
+      <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600 hover:text-green-700 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2"><a routerLink="about">About</a></li>
+      <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600  hover:text-green-700 bg-green-300  hover:bg-white  hover:text-black p-3 hover:border-2" ><a routerLink="products">Products</a></li>
+      <li class="mr-5 border-2 hover:decoration-dashed  hover:border-green-600 hover:bg-white  hover:text-black bg-green-300  p-3 hover:border-green-600 hover:border-2"><a routerLink="careers">Careers</a></li> 
       
     </ul>
   </div>
@@ -25,6 +23,9 @@
       
 </div>
 
+<router-outlet></router-outlet> 
+<!-- <app-signup></app-signup>
 
-<!-- <app-signup></app-signup> -->
-<router-outlet></router-outlet>
+
+
+<!-- <app-responsive></app-responsive> -->
