@@ -13,12 +13,17 @@ import {filterpipe} from "../pipes/transform.pipe"
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './app/products/products.component';
 import { SortDirective } from './directive/sort.directive';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from '@angular/material/sort';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ResponsiveComponent } from './responsive/responsive.component';
 import { LoaderComponent } from './loader/loader.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
+// import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +36,14 @@ import { LoaderComponent } from './loader/loader.component';
     SortDirective,
     ResponsiveComponent,
     LoaderComponent,
+    HomePageComponent,
+    ContactusComponent,
     
   ],
   imports: [
+    // FormGroup,
+    // FormControl,
+    // Validators,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

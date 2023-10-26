@@ -8,5 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export class SignupComponent {
   @Input() hero: any;
+  showHide:boolean=true;
   @Output() updatedatachild=new EventEmitter<string>();
 }

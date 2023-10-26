@@ -2,15 +2,33 @@ import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable, of } from 'rxjs';
 import { map, filter, catchError, switchMap, mergeMap } from 'rxjs/operators';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
   selector: 'app-careerspage',
   templateUrl: './careerspage.component.html',
-  styleUrls: ['./careerspage.component.css']
+  styleUrls: ['./careerspage.component.css'],
+  animations:[
+    trigger('CardTrigger',[
+      transition(':enter',[
+        style({
+          opacity:0,
+          transform:'translateX(100%)'
+        }),
+        animate(300)
+      ]),
+      transition(':leave',[
+        animate(300,style({
+          opacity:0,
+          tranform:'translateX(-100%)'
+        }))
+      ])
+    ])
+  ]
 })
 export class CareerspageComponent {
-
+  ShowCard:boolean=false;
   jsonData: any;
   username:any=of("");
   numbersObservable = of(1, 2, 3, 4, 5);
