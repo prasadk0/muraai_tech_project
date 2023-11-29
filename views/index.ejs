@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shrinker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+<div>
+    <div class="flex">
+<div></div>
+<div class="container">
+   <h1>URL Shrinker</h1>
+   <p>ShortURL is a free tool to shorten URLs and generate short links
+     URL shortener allows to create a shortened link making it easy to share</p>
+   <form action="/shortUrls" method="POST">
+       <label for="fullUrl" >Url</label>
+       <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl">
+       <button  type="submit">Shrink</button>
+   </form>
+
+   <table>
+       <thead>
+           <tr>
+               <th>Full URL</th>
+               <th>Short URL</th>
+            
+           </tr>
+       </thead>
+       <tbody>
+           <% shortUrls.forEach(shortUrl => { %>
+           <tr>
+               <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+               <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+
+           </tr>
+           <% }) %>
+       </tbody>
+   </table>
+</div>
+</div>
+<div class="uses">
+   <div class=""><img style="background-color: #c800ff;" src="https://www.shorturl.at/img/icon-like.png" alt=""><p>shortURL is easy and fast, enter the long link to get your shortened link</p></div>
+   <div><img   style="background-color: #c800ff;" src="https://www.shorturl.at/img/icon-url.png" alt=""><p>Use any link, no matter what size, ShortURL always shortens</p></div>
+   <div><img   style="background-color: #c800ff;" src="https://www.shorturl.at/img/icon-secure.png" alt=""><p>It is fast and secure, our service has HTTPS protocol and data encryptio</p></div>
+   <div><img  style="background-color: #c800ff;" src="https://www.shorturl.at/img/icon-statistics.png" alt=""><p>Check the number of clicks that your shortened URL received</p></div>
+   <div><img  style="background-color: #c800ff;" src="https://www.shorturl.at/img/icon-unique.png" alt=""><p>All links that try to disseminate spam, viruses and malware are deleted</p></div>
+   <div><img  style="background-color: #c800ff;" src="https://www.shorturl.at/img/icon-responsive.png" alt=""><p>Compatible with smartphones, tablets and desktop</p></div>
+</div>
+</div>
+</body>
+</html>

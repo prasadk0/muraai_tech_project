@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "devStart": "nodemon server.js"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +22,19 @@
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
+    "@emailjs/browser": "^3.11.0",
+    "bwip-js": "^4.1.2",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "keycloak-angular": "^14.1.0",
+    "keycloak-js": "^22.0.5",
+    "mongoose": "^5.9.1",
+    "nodemon": "^3.0.1",
+    "openid-client": "^5.6.1",
+    "passport": "^0.6.0",
     "rxjs": "~7.8.0",
+    "short-id": "^0.1.0-1",
+    "shortid": "^2.2.15",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

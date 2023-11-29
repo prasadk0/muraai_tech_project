@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 // import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactusComponent } from './contactus/contactus.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializer } from './util/app.init';
+import { UrlShrinkerComponent } from './url-shrinker/url-shrinker.component';
 
 @NgModule({
   declarations: [
@@ -38,12 +41,10 @@ import { ContactusComponent } from './contactus/contactus.component';
     LoaderComponent,
     HomePageComponent,
     ContactusComponent,
+    UrlShrinkerComponent,
     
   ],
   imports: [
-    // FormGroup,
-    // FormControl,
-    // Validators,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -53,11 +54,21 @@ import { ContactusComponent } from './contactus/contactus.component';
     MatSortModule,
     // MatSortModule,
     ReactiveFormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    KeycloakAngularModule
     
  
   ],
-  providers: [],
+  providers: [
+  
+    KeycloakService,
+    { 
+      provide: APP_INITIALIZER, 
+      useFactory: initializer, 
+      deps: [ KeycloakService ], 
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
