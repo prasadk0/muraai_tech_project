@@ -1,0 +1,72 @@
+<div class="img">
+    <img   class="h-1/5" src="../../assets/image_processing20201231-4907-a8958e.gif" alt="">
+</div>
+
+
+<div class="faqs p-5  mx-auto bg-red">
+    <div class="accordion mx-auto p-6">
+        <div class="border p-2">
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-semibold">Commonly Asked Questions</h2>
+            <button
+              (click)="toggleAccordion()"
+              class="text-gray-600 hover:text-gray-900 transition"
+            >
+              {{ isAccordionOpen ? "Close" : "Open" }}
+              <!-- *ngIf="condition; else elseBlock -->
+            </button>
+          </div>
+          <div [ngClass]="{ hidden: !isAccordionOpen }" class="mt-2">
+            <!-- Accordion Content -->
+          <div>
+            <ul >
+                <li *ngFor="let key of faqs" class="my-5 p-2 bg-neutral-300" >
+                <div class="flex justify-between">  <div><span> {{ key.question }}</span> <p class="text-neutral-50 text-sm mt-2">{{key.date|customPipe }}</p></div> <div><button class="bg-black text-white p-3">Answer</button></div></div>
+                  </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+  <!-- <img
+    src="https://th.bing.com/th/id/OIP.40dGYcDGI3Atx0PdmEIY_wHaF7?rs=1&pid=ImgDetMain"
+    width="200px"
+    alt=""
+  /> -->
+  <div>
+    <form class="p-5">
+      <div class="grid gap-6 mb-6 md:grid-cols-2">
+     <div class="">
+        <div>
+            <input
+              type="text"
+              id="first_name"  #name
+              class="bg-gray-50 my-5 w-auto border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Name Please.."
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              id="last_name" #question 
+              class="bg-gray-50  mt-5 w-full border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Ask Your Question.."
+              required
+            />
+          </div>
+     </div>
+      </div>
+      <button type="submit"   (click)="addUser(name.value, question.value)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+
+      <button type="cancel" class="text-white bg-red-700 ml-3 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<!-- <div class="faq">
+  <input type="text" #name placeholder="Ask Your questions here..." />
+  <input type="text" #question placeholder="Ask Your questions here..." />
+  <button (click)="addUser(name.value, question.value)">Ask</button>
+</div> -->

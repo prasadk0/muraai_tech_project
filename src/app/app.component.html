@@ -1,7 +1,9 @@
-<div    data-te-perfect-scrollbar-init  class="flex py-2  flex-row bg-orange-500 justify-center">
+<div class="h-2 bg-blue-400"></div>
+<div    data-te-perfect-scrollbar-init  class="flex pt-3 flex-row bg-orange-500 justify-center">
   <p class=" text-white font-bold text-center mr-2">For Knowing More Information Contact Us  </p>
-<span class="flex flex-row"><img class="rounded-full" src="../assets/download.png" alt="" width="30px">
-<p class="text-white pl-1 underline hover:text-black" >+91-7856453234</p>
+<span class="flex flex-row">
+<!-- <p class="text-white pl-1 underline hover:text-black" ></p> -->
+<p class="text-white pl-1 underline hover:text-black" ><a [href]="getWhatsAppLink()">+91-78098790809</a></p>
 </span>
 </div>
 <div class="  w-4/5 mx-auto mt-5 heading px-14 flex pb-4 flex-row justify-between sticky top-0 bg-white shadow-lg">
@@ -13,6 +15,8 @@
       <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600  hover:text-green-700 bg-green-300  hover:bg-white  hover:text-black p-3 hover:border-2" ><a routerLink="products">Products</a></li>
       <li class="mr-5 border-2 hover:decoration-dashed  hover:border-green-600 hover:bg-white  hover:text-black bg-green-300  p-3 hover:border-green-600 hover:border-2"><a routerLink="careers">Careers</a></li> 
       <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a (click)="openSpecificLink()">Url Shrinker</a></li>
+      <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a routerLink="faqs">faqs</a></li>
+
     </ul>
   </div>
      
@@ -20,7 +24,7 @@
         <!-- <p class="pt-4">already a user?</p> -->
         <button  class="bg-blue-400 p-2 my-2 hover:bg-blue-200 mr-4 rounded-full" >  <a routerLink="/contactus">Contact Us</a></button>
 
-        <button  class="bg-yellow-400 p-2 my-2 hover:bg-blue-200 mr-4 rounded-full" >  <a >Logout</a></button>
+        <button  class="bg-yellow-400 p-2 my-2 hover:bg-blue-200 mr-4 rounded-full" (click)="logout()" >  <a >Logout</a></button>
       </div>
       
 </div>

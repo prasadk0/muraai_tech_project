@@ -6,9 +6,9 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
       try {
         await keycloak.init({
           config: {
-            url: "http://localhost:8280", // Replace with your Keycloak server URL
-            realm: "Test", // Replace with your Keycloak realm name
-            clientId: "MuraaiAPP" // Replace with your Keycloak client ID
+            url: "http://localhost:8080", // Replace with your Keycloak server URL
+            realm: "Keycloak", // Replace with your Keycloak realm name
+            clientId: "Test" // Replace with your Keycloak client ID
           },
           loadUserProfileAtStartUp: true,
           initOptions: {

@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { routerAnimationState } from './app/products/shared/router_animation';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,19 @@ import { routerAnimationState } from './app/products/shared/router_animation';
   animations:[routerAnimationState]
 })
 export class AppComponent {
+  constructor(private keycloack:KeycloakService){
+
+  }
+  phoneNumber = '7821013670'; 
+  getWhatsAppLink(){
+       // Replace with the desired phone number
+    
+
+      return `https://wa.me/${this.phoneNumber}`;
+    }
+  logout(){
+  this.keycloack.logout();  
+  }
   title = 'newproject';
   @HostBinding('RouteAnimationTrigger') routerAnimation=true;
   openSpecificLink() {

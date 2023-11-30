@@ -7,6 +7,7 @@ import { ProductsComponent } from './app/products/products.component';
 import { FlexlayoutdemoComponent } from './flexlayoutdemo/flexlayoutdemo.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { CommentsComponent } from './comments/comments.component';
 
 const routes: Routes = [   { path: 'login', component:LoginComponent  },
 { path: 'signup', component:SignupComponent  },
@@ -14,7 +15,8 @@ const routes: Routes = [   { path: 'login', component:LoginComponent  },
 { path: 'products', component:ProductsComponent  },
 { path: 'about', component:FlexlayoutdemoComponent  },
 { path: '', component:HomePageComponent  },
-{ path: 'contactus', component:ContactusComponent }
+{ path: 'contactus', component:ContactusComponent },
+{ path: 'faqs', component:CommentsComponent }
 ];
 
 @NgModule({

@@ -27,7 +27,8 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializer } from './util/app.init';
 import { UrlShrinkerComponent } from './url-shrinker/url-shrinker.component';
-
+import { CommentsComponent } from './comments/comments.component';
+import { CustomPipe } from 'src/pipes/replace.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { UrlShrinkerComponent } from './url-shrinker/url-shrinker.component';
     SignupComponent,
     CareerspageComponent,
     filterpipe,
+    CustomPipe,
     ProductsComponent,
     SortDirective,
     ResponsiveComponent,
@@ -42,6 +44,7 @@ import { UrlShrinkerComponent } from './url-shrinker/url-shrinker.component';
     HomePageComponent,
     ContactusComponent,
     UrlShrinkerComponent,
+    CommentsComponent
     
   ],
   imports: [
