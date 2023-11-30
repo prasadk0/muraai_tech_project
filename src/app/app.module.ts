@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CareerspageComponent } from './careerspage/careerspage.component';
+import { ActivatedRoute } from '@angular/router';
 // import {Ro}
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from '@angular/forms';
@@ -49,6 +50,7 @@ import { CustomPipe } from 'src/pipes/replace.pipe';
   ],
   imports: [
     BrowserModule,
+    // ActivatedRoute,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

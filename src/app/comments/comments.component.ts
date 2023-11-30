@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+// import { ActivatedRoute } from '@angular/router';
+import { Router } from 'express';
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -19,6 +21,16 @@ dateoption = { year: 'numeric', month: 'long', day: 'numeric' };
     return result;
   }
   constructor( private http: HttpClient) {}
+  getId(id:number){
+    console.log(id);
+  this.getFqsByid(id);
+  // ( <any>this.router).navigate([''], { 
+  //   queryParams: {
+  //     query: id
+  //   }
+  // });
+
+  }
   addUser(newUser: any,question:any) {
     console.log(newUser)
     const obj = {
@@ -41,6 +53,21 @@ dateoption = { year: 'numeric', month: 'long', day: 'numeric' };
   }
   getFaqs(){
     this.http.get('http://localhost:3001/api/get-faqs').subscribe(
+      (response: any) => {
+        // alert('User added successfully.');
+        // this.displayUsers();
+        // this.userForm.reset();
+        console.log(response)
+        this.faqs = response;
+        // console.l
+      },
+      (error) => {
+        console.error('Error adding user', error);
+      }
+    );
+  }
+  getFqsByid(id :number){
+    this.http.get(`http://localhost:3001/api/get-user-by-id/${id}`).subscribe(
       (response: any) => {
         // alert('User added successfully.');
         // this.displayUsers();

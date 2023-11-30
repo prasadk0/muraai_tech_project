@@ -21,7 +21,7 @@
           <div>
             <ul >
                 <li *ngFor="let key of faqs" class="my-5 p-2 bg-neutral-300" >
-                <div class="flex justify-between">  <div><span> {{ key.question }}</span> <p class="text-neutral-50 text-sm mt-2">{{key.date|customPipe }}</p></div> <div><button class="bg-black text-white p-3">Answer</button></div></div>
+                <div class="flex justify-between">  <div><span> {{ key.question }}</span> <p class="text-neutral-50 text-sm mt-2">{{key.date|customPipe }}</p></div> <div><button class="bg-black text-white p-3" (click)="getId(key.id)">Read More..</button></div></div>
                   </li>
             </ul>
           </div>
