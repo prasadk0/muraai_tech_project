@@ -1,5 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { routerAnimationState } from './shared/router_animation';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products',
@@ -18,7 +19,8 @@ export class ProductsComponent {
     this.isAccordionOpen = !this.isAccordionOpen;
   }
   ngOnInit(){
-   
+    this.titleService.setTitle('Products-MegaAmaze');
+
     setTimeout(() => {
       fetch('https://fakestoreapi.com/products')
       .then((res)=>res.json()
@@ -109,5 +111,7 @@ console.log(this.jsonData)
             )
             
 }
+constructor(private titleService: Title) {}
+
 }
 

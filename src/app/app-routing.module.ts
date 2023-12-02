@@ -9,14 +9,14 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CommentsComponent } from './comments/comments.component';
 
-const routes: Routes = [   { path: 'login', component:LoginComponent  },
-{ path: 'signup', component:SignupComponent  },
-{ path: 'careers', component:CareerspageComponent  },
-{ path: 'products', component:ProductsComponent  },
-{ path: 'about', component:FlexlayoutdemoComponent  },
-{ path: '', component:HomePageComponent  },
-{ path: 'contactus', component:ContactusComponent },
-{ path: 'faqs', component:CommentsComponent }
+const routes: Routes = [   { path: 'login', component:LoginComponent ,data: { breadcrumb: 'Login' }  },
+{ path: 'signup', component:SignupComponent,data: { breadcrumb: 'Signup' }   },
+{ path: 'careers', component:CareerspageComponent  ,data: { breadcrumb: 'Career' } },
+{ path: 'products', component:ProductsComponent,data: { breadcrumb: 'Products' }   },
+{ path: 'about', component:FlexlayoutdemoComponent ,data: { breadcrumb: 'About' }  },
+{ path: '', component:HomePageComponent  ,data: { breadcrumb: '' } },
+{ path: 'contactus', component:ContactusComponent,data: { breadcrumb: 'Contact Us' }  },
+{ path: 'faqs', component:CommentsComponent,data: { breadcrumb: 'Faqs' }  }
 ];
 
 @NgModule({

@@ -1,35 +1,68 @@
-<div class="h-2 bg-blue-400"></div>
+<!-- <div class="h-2 bg-blue-400"></div> -->
 <div    data-te-perfect-scrollbar-init  class="flex pt-3 flex-row bg-orange-500 justify-center">
-  <p class=" text-white font-bold text-center mr-2">For Knowing More Information Contact Us  </p>
+  <p class=" text-white  text-center mr-4">For Knowing More Information Contact Us  </p>
 <span class="flex flex-row">
 <!-- <p class="text-white pl-1 underline hover:text-black" ></p> -->
-<p class="text-white pl-1 underline hover:text-black" ><a [href]="getWhatsAppLink()">+91-78098790809</a></p>
+<p class="text-white pl-1 underline hover:text-black ml-3" ><a [href]="getWhatsAppLink()">+91-78098790809</a></p>
 </span>
 </div>
-<div class="  w-4/5 mx-auto mt-5 heading px-14 flex pb-4 flex-row justify-between sticky top-0 bg-white shadow-lg">
+<div class="  w-4/5 mx-auto  heading px-14 flex pb-4 flex-row justify-between sticky top-0 bg-white shadow-lg">
 
   <div class="links">
-    <ul class="flex flex-row mt-4 ml-4">
-      <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a routerLink="signup">Home</a></li>
+    <!-- <ul class="flex flex-row mt-4 ml-4">
+      <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a routerLink="">Home</a></li>
       <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600 hover:text-green-700 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2"><a routerLink="about">About</a></li>
       <li class="mr-5 border-2 hover:decoration-dashed hover:border-green-600  hover:text-green-700 bg-green-300  hover:bg-white  hover:text-black p-3 hover:border-2" ><a routerLink="products">Products</a></li>
       <li class="mr-5 border-2 hover:decoration-dashed  hover:border-green-600 hover:bg-white  hover:text-black bg-green-300  p-3 hover:border-green-600 hover:border-2"><a routerLink="careers">Careers</a></li> 
       <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a (click)="openSpecificLink()">Url Shrinker</a></li>
       <li class="mr-5  hover:decoration-dashed hover:border-green-600 hover:text-green-700 border-2 bg-green-300 p-3  hover:bg-white  hover:text-black hover:border-2" ><a routerLink="faqs">faqs</a></li>
 
+      
+    </ul> -->
+    <ul class="flex flex-row mt-4 ml-4">
+      <li class="mx-4  p-2 my-2" ><a routerLink="">Home</a></li>
+      <li class="mx-4 p-2 my-2" ><a routerLink="about">About</a></li>
+      <li class="mx-4 p-2 my-2" ><a routerLink="products">Products</a></li>
+      <li class="mx-4 p-2 my-2" ><a routerLink="careers">Careers</a></li> 
+      <li  class="mx-4 p-2 my-2" ><a (click)="openSpecificLink()">Url Shrinker</a></li>
+      <li  class="mx-4 p-2 my-2" ><a routerLink="faqs">faqs</a></li>
+
+      
     </ul>
   </div>
      
       <div class="mt-4 ml-4 flex flex-row justify-between">
         <!-- <p class="pt-4">already a user?</p> -->
-        <button  class="bg-blue-400 p-2 my-2 hover:bg-blue-200 mr-4 rounded-full" >  <a routerLink="/contactus">Contact Us</a></button>
+        <button  class=" p-2 my-2 " >  <a routerLink="/contactus">Contact Us</a></button>
 
-        <button  class="bg-yellow-400 p-2 my-2 hover:bg-blue-200 mr-4 rounded-full" (click)="logout()" >  <a >Logout</a></button>
+        <button  class="p-2 my-2 " (click)="logout()" >  <a >Logout</a></button>
       </div>
       
 </div>
 
+
+
+<div class="breadcrumb pl-32 py-5 flex flex-row">
+  <div> <span>Home</span></div>
+  <img src="../assets/leftarrow.jpg" width="20px" alt="">
+  <ng-container class="flex flex-row" *ngFor="let breadcrumb of breadcrumbs; let last = last">
+  
+  <div>  <ng-container *ngIf="!last">
+
+    <a [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a> /
+  </ng-container>
+  <ng-container *ngIf="last">{{ breadcrumb.label }}</ng-container></div>
+  </ng-container>
+</div>
 <router-outlet></router-outlet> 
+<!-- <button
+  class="fixed bottom-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border--300"
+  (click)="scrollToTop()"
+>
+  Scroll to Top
+</button> -->
+
+<img src="../assets/gototop.png" alt="" height="50px" width="50px" (click)="scrollToTop()"  class="fixed bottom-4 right-4 rounded-full ">
 <!-- <app-signup></app-signup>
 
 

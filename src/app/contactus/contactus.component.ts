@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import emailjs from '@emailjs/browser';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-contactus',
   templateUrl: './contactus.component.html',
@@ -18,4 +18,9 @@ export class ContactusComponent {
     reply_to: "shirish G",
     });
  }
+ constructor(private titleService: Title) {}
+ngOnInit(){
+  this.titleService.setTitle('Contact Us-MegaAmaze');
+
+}
 }

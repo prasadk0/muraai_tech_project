@@ -3,7 +3,7 @@ import { DataService } from '../data.service';
 import { Observable, of } from 'rxjs';
 import { map, filter, catchError, switchMap, mergeMap } from 'rxjs/operators';
 import { animate, style, transition, trigger } from '@angular/animations';
-
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-careerspage',
@@ -42,9 +42,10 @@ export class CareerspageComponent {
     )
     }
   
-constructor(private dataService: DataService){
+constructor(private dataService: DataService,private titleService: Title){
  
 }
+
 data="prasad";
 key:string="";
 updatedata(param:string){
@@ -60,7 +61,8 @@ ngOnInit(): void {
     this.username=of(uname);
     })
   });
- 
+  this.titleService.setTitle('Career-MegaAmaze');
+
 
 
  

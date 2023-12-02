@@ -3,38 +3,109 @@
 </div>
 
 
-<div class="faqs p-5  mx-auto bg-red">
+<div class="faqs   mx-auto bg-red">
     <div class="accordion mx-auto p-6">
-        <div class="border p-2">
+        <div class=" p-2">
           <div class="flex justify-between items-center">
-            <h2 class="text-lg font-semibold">Commonly Asked Questions</h2>
+            <h2 class="text-lg ">Commonly Asked Questions</h2>
+          
             <button
               (click)="toggleAccordion()"
               class="text-gray-600 hover:text-gray-900 transition"
             >
-              {{ isAccordionOpen ? "Close" : "Open" }}
+              <!-- {{ isAccordionOpen ? "Close" : "Open" }} -->
+              <img  *ngIf="!isAccordionOpen" width="50px" src="../../assets/plus.jpg" alt="">
+              <!-- *ngIf="condition; else elseBlock -->
+              <img  *ngIf="isAccordionOpen" width="50px" src="../../assets/istockphoto-834637964-612x612.jpg" alt="">
               <!-- *ngIf="condition; else elseBlock -->
             </button>
           </div>
-          <div [ngClass]="{ hidden: !isAccordionOpen }" class="mt-2">
+          <div [ngClass]="{ hidden: !isAccordionOpen }" class="mt-2  transition duration-500 ease-in-out">
+            <button class="bg-neutral-100 text-neutral-500 w-52  px-6 py-5" (click)="toggleDivVisibility()">{{!isDivVisible?"Read Answer":"Answers"}}</button>
+            <mat-form-field >
+              <mat-select  placeholder="Choose Category.."  [(value)]="selected">
+                <mat-option  (click)="categoryBasedSearching()" *ngFor="let food of foods" [value]="food.value">
+                  {{ food.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <!-- <h1>{{selected}}</h1> -->
+            <!-- <input type="search" placeholder="Search accordingly..."> -->
+
+<!-- dropdown -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- Accordion Content -->
           <div>
             <ul >
                 <li *ngFor="let key of faqs" class="my-5 p-2 bg-neutral-300" >
-                <div class="flex justify-between">  <div><span> {{ key.question }}</span> <p class="text-neutral-50 text-sm mt-2">{{key.date|customPipe }}</p></div> <div><button class="bg-black text-white p-3" (click)="getId(key.id)">Read More..</button></div></div>
+                <div class="flex justify-between "><div><span class="font-extrabold text-xl"> {{ key.question }}</span>  <p class="text-neutral-50 text-sm mt-2">{{key.date|customPipe }}</p></div> <div></div></div>
+                   
+                <!--  -->
+                <div class="accordion mx-auto p-6" *ngIf="isDivVisible">
+                  <div class="border p-2">
+                    <div class="flex justify-between items-center">
+                      <p>{{key.answer}}</p>
+                    </div>
+                    <div [ngClass]="{ hidden: isDivVisible }" class="mt-2">
+                      <!-- Accordion Content -->
+                    <div>
+                      <ul >
+                        <h1>this is div</h1>
+                          <!-- <li *ngFor="let key of faqs" class="my-5 p-2 bg-neutral-300" >
+                          <div class="flex justify-between">  <div><span> {{ key.question }}</span> <p class="text-neutral-50 text-sm mt-2">{{key.date|customPipe }}</p></div> <div><button class="bg-black text-white p-3" (click)="getId(key.id) ">Read More..</button></div></div>
+                            </li> -->
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
                   </li>
             </ul>
           </div>
           </div>
         </div>
       </div>
+
+
+     
+
+
+      
       
   <!-- <img
     src="https://th.bing.com/th/id/OIP.40dGYcDGI3Atx0PdmEIY_wHaF7?rs=1&pid=ImgDetMain"
     width="200px"
     alt=""
   /> -->
-  <div>
+  <div class="">
     <form class="p-5">
       <div class="grid gap-6 mb-6 md:grid-cols-2">
      <div class="">

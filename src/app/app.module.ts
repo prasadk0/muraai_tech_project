@@ -30,6 +30,7 @@ import { initializer } from './util/app.init';
 import { UrlShrinkerComponent } from './url-shrinker/url-shrinker.component';
 import { CommentsComponent } from './comments/comments.component';
 import { CustomPipe } from 'src/pipes/replace.pipe';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,9 @@ import { CustomPipe } from 'src/pipes/replace.pipe';
     // MatSortModule,
     ReactiveFormsModule,
     MatPaginatorModule,
-    KeycloakAngularModule
+    KeycloakAngularModule,
+MatSelectModule
+
     
  
   ],

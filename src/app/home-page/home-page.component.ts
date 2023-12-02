@@ -3,17 +3,25 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable, fromEvent, range, throwError } from 'rxjs';
 import { of } from 'rxjs';
 import { map, reduce, filter, count, max, min, concat, debounceTime } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-  constructor(private formBuilder:FormBuilder){}
+  constructor(private formBuilder:FormBuilder,private titleService: Title){}
+  // constructor(private titleService: Title) {}
+
   ngOnInit(){
     this.searchform=new FormGroup({
       name: new FormControl('start search')
-    })
+
+    }
+    
+    )
+    this.titleService.setTitle('Home-MegaAmaze');
+
     this.searchform.get('name')?.valueChanges.pipe(
       debounceTime(3000)
     ).subscribe(data=>console.log(data)

@@ -4,6 +4,7 @@ import {NgFor} from '@angular/common';
 import {filterpipe} from"../../pipes/transform.pipe"
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Title } from '@angular/platform-browser';
 
 export interface Dessert {
   id: number;
@@ -34,7 +35,7 @@ export class FlexlayoutdemoComponent {
 
   // @ViewChild('paginator') paginator=MatPaginator
   // dataSource=MatTableDataSource<any>
-  constructor() {
+  constructor(private titleService: Title) {
     fetch('https://fakestoreapi.com/products')
     .then(res=>res.json())
     .then(json=>{this.jsonData=json
@@ -83,7 +84,8 @@ export class FlexlayoutdemoComponent {
   // key:string="";
  
   ngOnInit(){
-    
+    this.titleService.setTitle('About-MegaAmaze');
+
   }
 }
   
