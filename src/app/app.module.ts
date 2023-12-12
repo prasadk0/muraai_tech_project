@@ -7,14 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CareerspageComponent } from './careerspage/careerspage.component';
 import { ActivatedRoute } from '@angular/router';
-// import {Ro}
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from '@angular/forms';
 import {filterpipe} from "../pipes/transform.pipe"
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './app/products/products.component';
 import { SortDirective } from './directive/sort.directive';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from '@angular/material/sort';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -22,7 +21,6 @@ import { ResponsiveComponent } from './responsive/responsive.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
-// import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactusComponent } from './contactus/contactus.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
@@ -31,6 +29,7 @@ import { UrlShrinkerComponent } from './url-shrinker/url-shrinker.component';
 import { CommentsComponent } from './comments/comments.component';
 import { CustomPipe } from 'src/pipes/replace.pipe';
 import {MatSelectModule} from '@angular/material/select';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +45,8 @@ import {MatSelectModule} from '@angular/material/select';
     HomePageComponent,
     ContactusComponent,
     UrlShrinkerComponent,
-    CommentsComponent
+    CommentsComponent,
+    AdminComponent
     
   ],
   imports: [

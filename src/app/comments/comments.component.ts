@@ -104,8 +104,19 @@ dateoption = { year: 'numeric', month: 'long', day: 'numeric' };
         // alert('User added successfully.');
         // this.displayUsers();
         // this.userForm.reset();
-        console.log(response)
-        this.faqs = response;
+
+        // if(this.faqs.answer==="")
+        // this.faqs = response;
+        let arr=[]
+        for(let i of response){
+        
+          if(i.answer!==null){
+            console.log(i)
+            arr.push(i);
+          }
+        }
+        this.faqs=arr;
+        console.log("ll",response[0].id)
         // console.l
       },
       (error) => {

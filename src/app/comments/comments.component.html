@@ -3,7 +3,7 @@
 </div>
 
 
-<div class="faqs   mx-auto bg-red">
+<div class="faqs   w-4/5 mx-auto bg-red">
     <div class="accordion mx-auto p-6">
         <div class=" p-2">
           <div class="flex justify-between items-center">
@@ -21,7 +21,7 @@
             </button>
           </div>
           <div [ngClass]="{ hidden: !isAccordionOpen }" class="mt-2  transition duration-500 ease-in-out">
-            <button class="bg-neutral-100 text-neutral-500 w-52  px-6 py-5" (click)="toggleDivVisibility()">{{!isDivVisible?"Read Answer":"Answers"}}</button>
+            <button class="bg-neutral-100 text-neutral-500 w-52 text-sm mr-5 border-b  border-neutral-500  px-6 py-5" (click)="toggleDivVisibility()">{{!isDivVisible?"Read Answer":"Answers"}}</button>
             <mat-form-field >
               <mat-select  placeholder="Choose Category.."  [(value)]="selected">
                 <mat-option  (click)="categoryBasedSearching()" *ngFor="let food of foods" [value]="food.value">
@@ -105,35 +105,41 @@
     width="200px"
     alt=""
   /> -->
-  <div class="">
-    <form class="p-5">
-      <div class="grid gap-6 mb-6 md:grid-cols-2">
-     <div class="">
-        <div>
-            <input
-              type="text"
-              id="first_name"  #name
-              class="bg-gray-50 my-5 w-auto border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Name Please.."
-              required
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              id="last_name" #question 
-              class="bg-gray-50  mt-5 w-full border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Ask Your Question.."
-              required
-            />
-          </div>
-     </div>
-      </div>
-      <button type="submit"   (click)="addUser(name.value, question.value)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+  
+</div>
 
-      <button type="cancel" class="text-white bg-red-700 ml-3 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancel</button>
-    </form>
-  </div>
+
+
+
+
+<div class=" w-4/5 mx-auto">
+  <form class="p-5">
+    <div class="mb-6 md:grid-cols-2">
+   <div class="">
+      <div>
+          <input
+            type="text"
+            id="first_name"  #name
+            class="bg-gray-50 my-5 w-auto border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Name Please.."
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            id="last_name" #question 
+            class="bg-gray-50  mt-5 w-full border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Ask Your Question.."
+            required
+          />
+        </div>
+   </div>
+    </div>
+    <button type="submit"   (click)="addUser(name.value, question.value)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+
+    <button type="cancel" class="text-white bg-red-700 ml-3 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancel</button>
+  </form>
 </div>
 
 <!-- <div class="faq">

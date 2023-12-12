@@ -1,0 +1,326 @@
+<div class="w-4/5 mx-auto">
+  <div class="flex flex-row">
+    <img src="../../assets/admin.png" class="mr-3" width="30px" alt="" />
+    <span class="pt-1">Hii,Prasad</span>
+  </div>
+</div>
+<div class="w-4/5 mx-auto">
+  <div class="flex flew-row justify-end">
+    <div class="flex">
+      <div class="m-4 p-4 border-b border-black bg-zinc-200">
+        <p class="text-center">93</p>
+        <p>website Views</p>
+      </div>
+
+      <div class="p-10 border-b border-black bg-zinc-200">
+        <p class="text-center">5</p>
+        <p>Ongoing Projects</p>
+      </div>
+      <div class="m-4 p-4 border-b border-black bg-zinc-200 bg-zinc-200">
+        <p class="text-center">9</p>
+        <p>Faqs question</p>
+      </div>
+      <div class="p-10 border-b border-black bg-zinc-200">
+        <p class="text-center">8</p>
+        <p>Account request</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w-4/5 mx-auto">
+  <p class="p-3 bg-black text-white w-20">Actions</p>
+  <div class="flex flew-row">
+    <div class="action">
+      <button
+        class="bg-neutral-100 text-neutral-500 w-56 text-sm mr-6 border-b border-neutral-500 px-7 py-5"
+      >
+        Create User
+      </button>
+
+      <button
+        (click)="toggleAccordion()"
+        class="bg-neutral-100 text-neutral-500 w-56 mr- mr-8 text-sm mr-6 border-b border-neutral-500 px-7 py-5"
+      >
+        Answer Faqs
+      </button>
+      <button
+        (click)="empShowHide()"
+        class="bg-neutral-100 text-neutral-500 w-56 text-sm mr-5 border-b border-neutral-500 px-7 py-5"
+      >
+        Employee Details
+      </button>
+      <button
+        class="bg-neutral-100 text-neutral-500 w-56 text-sm border-b border-neutral-500 px-7 py-5"
+      
+        (click)="projectShowHide()"  >
+        Project Information
+      </button>
+    </div>
+  </div>
+</div>
+<div class="w-4/5 mx-auto">
+  <div class="content">
+    <!-- here is the content... -->
+
+    <div
+      [ngClass]="{ hidden: !isAccordionOpen }"
+      class="mt-2 transition duration-500 ease-in-out"
+    >
+      <!-- Accordion Content -->
+      <div>
+        <div class="">
+          <form class="">
+            <div class="mb-6 md:grid-cols-2">
+              <div class="">
+                <div>
+                  <input type="text" [(ngModel)]="id" hidden />
+                  <input
+                    type="text"
+                    name="apiDataValue"
+                    readonly
+                    id="first_name"
+                    [(ngModel)]="apiDataValue"
+                    class="bg-gray-50 my-5 w-auto border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="No remaining question.."
+                    required
+                  />
+                </div>
+                <div class="flex flew-row">
+                  <input
+                    type="text"
+                    id="last_name"
+                    #answer
+                    class="bg-gray-50 mt-1 w-full border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Answer the Question Properly.."
+                    required
+                  />
+
+                  <input
+                    type="text"
+                    id="last_name"
+                    #category
+                    class="bg-gray-50 ml-5 mt-1 w-full border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Faqs Category.."
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              (click)="
+                updatefaqs(id, apiDataValue, answer.value, category.value)
+              "
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Submit
+            </button>
+
+            <button
+              type="cancel"
+              class="text-white bg-red-700 ml-3 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- employee details -->
+<div class="w-4/5 mx-auto">
+  <div class="content">
+    <!-- here is the content... -->
+
+    <div
+      [ngClass]="{ hidden: !empdetails }"
+      class="mt-2 transition duration-500 ease-in-out"
+    >
+      <!-- Accordion Content -->
+      <div>
+        <!--          
+<table class="mx-10 my-10" matSort (matSortChange)="sortData($event)">
+    <tr color="primary" class="bg-gray-300 p-8">
+      <th class="p-5" mat-sort-header="id">Emp Id</th>
+      <th class="p-5" mat-sort-header="name">Name</th>
+      <th class="p-5" mat-sort-header="role">Role</th>
+      <th class="p-5" mat-sort-header="Email" >Email</th>
+       <th mat-sort-header="protein">Protein (g)</th> -->
+        <!-- </tr>
+  
+    <tr *ngFor="let dessert of sortedData ">
+      <td class="p-5"> {{dessert.id}}</td>
+      <td class="p-5">{{dessert.name}}</td>
+      <td class="p-5">{{dessert.role}}</td>
+      <td class="p-5">{{dessert.email}}</td>
+      <td>{{dessert.protein}}</td>
+    </tr>
+   
+ </table> -->
+        <!-- <mat-paginator #paginator [length]="100"
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]"
+aria-label="Select page"> -->
+        <!-- </mat-paginator> -->
+        <div class="flex row justify-between mr-10 mt-5">
+          <button
+            (click)="displayFormfun()"
+            class="p-3 ck text-black border-b border-black mr-5 bg-zinc-200 w-30"
+          >
+            Add Employee
+          </button>
+          <button
+            class="p-3 ck text-black border-b border-black bg-zinc-200 w-30"
+            (click)="showEmpDetails()"
+          >
+            Employee Details
+          </button>
+        </div>
+
+        <div class="content">
+          <!-- here is the content... -->
+
+          <div
+            [ngClass]="{ hidden: !displayform }"
+            class="mt-2 transition duration-500 ease-in-out"
+          >
+            <form class="">
+              <div class="mb-6 md:grid-cols-2">
+                <div class="">
+                  <div>
+                    <input type="text" [(ngModel)]="id" hidden />
+                    <input
+                      type="text"
+                      name=""
+                      id="first_name"
+                      #empname
+                      class="bg-gray-50 my-5 w-auto border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Employee Name"
+                      required
+                    />
+                  </div>
+                  <div class="flex flew-row">
+                    <input
+                      type="text"
+                      id="last_name"
+                      #role
+                      class="bg-gray-50 mt-1 w-full border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Role"
+                      required
+                    />
+
+                    <input
+                      type="text"
+                      id="last_name"
+                      #email
+                      class="bg-gray-50 ml-5 mt-1 w-full border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <button
+                type="submit"
+                (click)="addEmp(empname.value, role.value, email.value)"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Add
+              </button>
+
+              <button
+                type="cancel"
+                class="text-white bg-red-700 ml-3 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+
+          <div
+            [ngClass]="{ hidden: !empTable }"
+            class="mt-2 transition duration-500 ease-in-out"
+          >
+            <table
+              class="w-full my-10"
+              matSort
+              (matSortChange)="sortData($event)"
+            >
+              <tr color="primary" class="border-b border-neutral-500 p-8">
+                <th
+                  class="p-5 bg-neutral-100 text-neutral-500"
+                  mat-sort-header="id"
+                >
+                  Emp Id
+                </th>
+                <th
+                  class="p-5 bg-neutral-100 text-neutral-500"
+                  mat-sort-header="name"
+                >
+                  Name
+                </th>
+                <th
+                  class="p-5 bg-neutral-100 text-neutral-500"
+                  mat-sort-header="role"
+                >
+                  Role
+                </th>
+                <th
+                  class="p-5 bg-neutral-100 text-neutral-500 t"
+                  mat-sort-header="email"
+                >
+                  Email
+                </th>
+                <th
+                  mat-sort-header="project"
+                  class="bg-neutral-100 text text-neutral-500 p-5"
+                >
+                  Project name
+                </th>
+              </tr>
+
+              <tr *ngFor="let dessert of table" class="bg-neutral-200">
+                <td class="p-5">{{ dessert.id }}</td>
+                <td class="p-5">{{ dessert.firstName }}</td>
+                <td class="p-5">{{ dessert.role }}</td>
+                <td class="p-5">{{ dessert.email }}</td>
+                <td>{{ dessert.Project_Name }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- project details -->
+<div class="w-4/5 mx-auto">
+  <div class="content">
+    <!-- here is the content... -->
+
+    <div
+      [ngClass]="{ hidden: !projectShowHidevar }"
+      class="mt-2 transition duration-500 ease-in-out"
+    >
+      <!-- Accordion Content -->
+      <div>
+        <div class="flex row justify-between mr-10 mt-5"></div>
+
+        <div class="content">
+          <!-- here is the content... -->
+
+          <div
+            
+            class="mt-2 transition duration-500 ease-in-out"
+          >
+            here is the project details
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

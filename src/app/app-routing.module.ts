@@ -8,6 +8,7 @@ import { FlexlayoutdemoComponent } from './flexlayoutdemo/flexlayoutdemo.compone
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CommentsComponent } from './comments/comments.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [   { path: 'login', component:LoginComponent ,data: { breadcrumb: 'Login' }  },
 { path: 'signup', component:SignupComponent,data: { breadcrumb: 'Signup' }   },
@@ -16,9 +17,9 @@ const routes: Routes = [   { path: 'login', component:LoginComponent ,data: { br
 { path: 'about', component:FlexlayoutdemoComponent ,data: { breadcrumb: 'About' }  },
 { path: '', component:HomePageComponent  ,data: { breadcrumb: '' } },
 { path: 'contactus', component:ContactusComponent,data: { breadcrumb: 'Contact Us' }  },
-{ path: 'faqs', component:CommentsComponent,data: { breadcrumb: 'Faqs' }  }
+{ path: 'faqs', component:CommentsComponent,data: { breadcrumb: 'Faqs' }  },
+{ path: 'admin', component:AdminComponent,data: { breadcrumb: 'Admin' }  }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

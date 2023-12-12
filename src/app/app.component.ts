@@ -63,6 +63,12 @@ export class AppComponent {
     // Open the link in a new tab or window
     window.open(specificLink, '_blank');
   }
+  openSpecificLink1(){
+    const specificLink = 'http://localhost:57788/';
+
+    // Open the link in a new tab or window
+    window.open(specificLink, '_blank');
+  }
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.toggleScrollTopButtonVisibility();
