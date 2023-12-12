@@ -46,8 +46,7 @@ export class AppComponent {
 
   phoneNumber = '7821013670'; 
   getWhatsAppLink(){
-       // Replace with the desired phone number
-    
+     
 
       return `https://wa.me/${this.phoneNumber}`;
     }
@@ -57,16 +56,16 @@ export class AppComponent {
   title = 'newproject';
   @HostBinding('RouteAnimationTrigger') routerAnimation=true;
   openSpecificLink() {
-    // Replace 'https://example.com' with your specific link
+   
     const specificLink = 'http://localhost:5000/';
 
-    // Open the link in a new tab or window
+   
     window.open(specificLink, '_blank');
   }
   openSpecificLink1(){
     const specificLink = 'http://localhost:57788/';
 
-    // Open the link in a new tab or window
+    
     window.open(specificLink, '_blank');
   }
   @HostListener('window:scroll', [])
